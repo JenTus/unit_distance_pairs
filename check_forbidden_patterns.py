@@ -47,9 +47,13 @@ def check_k23(list_of_mats, n):
     for mats in list_of_mats:
         for ttp in check_list:
             [rrow, ccolum] = ttp
-            if sum([mats[row][colum] for row in rrow for colum in ccolum]) != 6:
-                possible_mats.append(mats)
+            if sum([mats[row][colum] for row in rrow for colum in ccolum]) == 6:
+                break
+        possible_mats.append(mats)
     return possible_mats
 
 
-# def check_k4(list_of_mats, n)
+def check_k4(list_of_mats, n):
+    """Return a list of mats that do not contain K4."""
+    four_list = list(itertools.combinations([i for i in range(n)], 4))
+    [list(itertools.combinations(four, 2)) for four in four_list]
