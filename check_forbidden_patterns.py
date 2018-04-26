@@ -4,7 +4,7 @@ import itertools
 
 def choose_2row_3colum(five):
     list_of_two = list(itertools.combinations(five, 2))
-    tmp = [[list(set(five).difference(set(two))), two]
+    tmp = [[list(two), list(set(five).difference(set(two)))]
            for two in list_of_two]
     return tmp
 
@@ -39,8 +39,17 @@ def check_k23(list_of_mats, n):
     """Return a list of mats that do not contain K23."""
     five_list = list(itertools.combinations([i for i in range(n)], 5))
     check_list = []
+    possible_mats = []
     for five in five_list:
         tmp = choose_2row_3colum()
         for tp in tmp:
             check_list.append(tp)
-    return check_list
+    for mats in list_of_mats:
+        for ttp in check_list:
+            [rrow, ccolum] = ttp
+            if sum([mats[row][colum] for row in rrow for colum in ccolum]) != 6:
+                possible_mats.append(mats)
+    return possible_mats
+
+
+# def check_k4(list_of_mats, )
