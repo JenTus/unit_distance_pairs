@@ -10,7 +10,7 @@ def get_possible_mats(n):
     return result
 
 
-for n in range(4, 5):
+for n in range(4, 10):
     start_time = time.time()
     res = get_possible_mats(n)
     mx = [sum([sum(j) for j in i]) for i in res]
