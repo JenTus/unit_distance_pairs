@@ -25,4 +25,4 @@ def all_matrices(n):
                          if sum(i) >= total_ones]
 
 
-def check_k23
+#def check_k23
