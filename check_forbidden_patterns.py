@@ -31,7 +31,7 @@ def all_matrices(n):
     least = (n-1)*2 - 1  # the number of edges is at least 2(n-1)-1
     all_possible_list = [i for i in itertools.product([0, 1], repeat=complete)
                          if sum(i) >= least]
-    all_mats = [create_matrix(all_possible_list[i], n) for i in range(n)]
+    all_mats = [create_matrix(i, n) for i in all_possible_list]
     return all_mats
 
 
