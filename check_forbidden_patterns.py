@@ -3,6 +3,7 @@ import itertools
 
 
 def choose_2row_3colum(five):
+    """Choose 2 as rows and 3 as colums from 5 given numbers."""
     list_of_two = list(itertools.combinations(five, 2))
     tmp = [[list(two), list(set(five).difference(set(two)))]
            for two in list_of_two]
