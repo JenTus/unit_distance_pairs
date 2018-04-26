@@ -1,16 +1,17 @@
-"""Import packages"""
+"""Import packages."""
 import itertools
 
 
 def create_matrix(list_of_edges, n):
     """
     Given half of all the edges and the number of nodes.
+
     create the matrix
     """
     matrix = [[0 for i in range(n)] for j in range(n)]
     ind = 0
     for i in range(n):
-        for j in range(i+1):
+        for j in range(i):
             matrix[i][j] = list_of_edges[ind]
             matrix[j][i] = list_of_edges[ind]
             ind += 1
