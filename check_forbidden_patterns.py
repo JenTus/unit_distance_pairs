@@ -41,7 +41,7 @@ def check_k23(list_of_mats, n):
     check_list = []
     possible_mats = []
     for five in five_list:
-        tmp = choose_2row_3colum()
+        tmp = choose_2row_3colum(five)
         for tp in tmp:
             check_list.append(tp)
     for mats in list_of_mats:
