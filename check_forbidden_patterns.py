@@ -27,7 +27,7 @@ def create_matrix(list_of_edges, n):
 
 def all_matrices(n):
     """Create all the possible adjacency matrices of size n times n."""
-    complete = n * (n-1) / 2
+    complete = int(n * (n-1) / 2)
     least = (n-1)*2 - 1  # the number of edges is at least 2(n-1)-1
     all_possible_list = [i for i in itertools.product([0, 1], repeat=complete)
                          if sum(i) >= least]
@@ -52,4 +52,4 @@ def check_k23(list_of_mats, n):
     return possible_mats
 
 
-# def check_k4(list_of_mats, )
+# def check_k4(list_of_mats, n)
